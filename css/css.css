@@ -1,27 +1,208 @@
 /*red #753940*/
-
+html {
+	height: 100%;
+}
 
 body {
+	padding: 0;
+	margin: 0;
 	text-align: center;
 	background-color: #293852;
 	color: #59A2EE;
+	height: 100%;
+	overflow: hidden;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 h1 {
 	background-color: #5DBF89;
-	text-transform: uppercase;
 	color: #293852;
+	text-transform: uppercase;
 	padding: 25px 0;
-	font-family: 'Fjalla One', sans-serif;
+	margin-top: 30px;
+}
+
+p {
+	margin: 0;
+}
+
+.red {
+	color: #753940;
 }
 
 div.columns {
 	width: 50%;
 	height: 100px;
 	float: left;
+	margin-top: 120px;
+}
+
+.timer-label {
+	border: 2px solid #59A2EE;
+	margin: 5px auto 20px;
+	max-width: 350px;
+	font-size: 32px;
+	padding: 10px 0;
+	border-radius: 5px;
+	text-transform: uppercase;
 }
 
 .countdown-buttons {
-	width: 75px;
+	width: 100px;
 	padding: 8px 0;
+	text-align: center;
+}
+
+.main-time {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.time {
+	font-family: Inconsolata, monospace;
+	font-size: 72px;
+}
+
+button {
+	background-color: #5DBF89;
+	color: #293852;
+	border: 1px solid #5DBF89;
+	border-radius: 5px;
+	margin: 0 10px;
+	font-size: 24px;
+	padding: 8px 25px;
+
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+button.inline-block {
+	width: 65px;
+	padding: 8px 0;
+	text-align: center;
+}
+
+.set-timer-section {
+	position: relative;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+p.set-timer {
+	font-size: 24px;
+	width: 100%;
+}
+
+.absolute {
+	position: absolute;
+	top: 43%;
+	right: 0;
+}
+
+.margin-top {
+	margin-top: 100px !important;
+}
+
+.margin-top2 {
+	margin-top: 65px;
+}
+
+.time-centerer {
+	width: 75px;
+	margin-left: 75px;
+	text-align: center;
+}
+
+@media screen and (max-width: 740px) {
+	div.columns {
+		float: none;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.countdown-buttons {
+		width: 75px;
+		font-size: 16px;
+		padding: 8px 0;
+		text-align: center;
+	}
+
+	.margin-top {
+		margin-top: 125px !important;
+	}
+
+	.margin-top2 {
+		margin-top: 25px;
+	}
+
+	.time-centerer {
+		width: 75px;
+		margin-left: 25px;
+		text-align: center;
+	}
+
+	.absolute {
+		right: 25px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	div.columns {
+		float: none;
+		margin: 0 auto;
+	}
+
+	.countdown-buttons {
+		display: block;
+		margin: 10px auto 0;
+		width: 350px;
+		font-size: 24px;
+		padding: 8px 0;
+		text-align: center;
+	}
+
+	.margin-top {
+		margin-top: 250px !important;
+	}
+
+	.absolute {
+		right: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.time-centerer {
+		width: 100%;
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.absolute {
+		position: relative;
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.timer-label {
+		width: 90%;
+	}
+
+	.countdown-buttons {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.absolute {
+		position: relative;
+		margin-top: 10px;
+	}
 }

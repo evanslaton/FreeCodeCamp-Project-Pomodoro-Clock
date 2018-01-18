@@ -8,37 +8,45 @@
 </head>
 <body>
 	<h1>Pomodoro Clock</h1>
+	<div class="container">
 
-	<div class="columns" style="background-color: lightgrey;">
-		<p>00:00</p>
-		<p>Session or break</p>
-	
-		<button class="countdown-buttons">Start</button>
-		<button class="countdown-buttons">Stop</button>
-		<button class="countdown-buttons">Reset</button>		
+		<div class="columns">
+			<p class="time">00:<span class="red">00</span></p>
+			<p class="timer-label">Session</p>
+		
+			<button class="countdown-buttons">Start</button>
+			<button class="countdown-buttons">Stop</button>
+			<button class="countdown-buttons">Reset</button>		
+		</div>
+
+		<div class="columns margin-top">
+			<div id="session" class="set-timer-section">
+				<div class="time-centerer">
+					<p class="set-timer">Session</p>
+					<p id="sessionTime" class="time inline-block">5</p>
+				</div>
+				<div class="absolute">
+					<button class="inline-block add-time">+</button>
+					<button class="inline-block subtract-time">-</button>
+				</div>
+			</div>
+
+			<div id="break" class="set-timer-section margin-top2">
+				<div class="time-centerer">
+					<p class="set-timer">Break</p>
+					<p id="breakTime" class="time inline-block">25</p>
+				</div>
+				<div class="absolute">
+					<button class="inline-block add-time">+</button>
+					<button class="inline-block subtract-time">-</button>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
 	</div>
-
-
-
-
-
-	<div class="columns" style="background-color: azure;">
-		<p>Session</p>
-		<p>00:00</p>
-		<button>+</button>
-		<button>-</button>
-
-
-		<p>Break</p>
-		<p>00:00</p>
-		<button>+</button>
-		<button>-</button>
-	</div>
-
-
-
-
-
-
 </body>
 </html>
