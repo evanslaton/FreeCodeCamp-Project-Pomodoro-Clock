@@ -6,11 +6,12 @@ $(document).ready(function() {
 	var secCounter;
 	var resetTracker = false;
 	var oneSecondInterval;
+	var alreadyCounting = false;
 
 	var startCountDown = () => {
 		oneSecondInterval = setInterval(function() {
 			countDown();
-		}, 300);
+		}, 1000);
 	};
 
 	var stopCountDown = () => {
@@ -75,39 +76,50 @@ $(document).ready(function() {
 	};
 
 $('#start').on('click', () => {
-	if (!resetTracker) {
-		secCounter = 59;
-		minCounter = sessionTime - 1;
+	if (!alreadyCounting) {
+		if (!resetTracker) {
+			secCounter = 59;
+			minCounter = sessionTime - 1;
 
-		if (sessionTime < 10) {
-			$('#main-time-mins').text('0' + minCounter);
+			if (sessionTime < 10) {
+				$('#main-time-mins').text('0' + minCounter);
+			} else {
+				$('#main-time-mins').text(minCounter);
+			}
+
+			$('#main-time-sec').text(secCounter);
+			startCountDown();		
+		} else if (resetTracker && secCounter === 60) {
+			secCounter--;
+			minCounter--;
+			$('#main-time-sec').text(secCounter);
+				if (minCounter < 10) {
+					$('#main-time-mins').text('0' + minCounter);
+				} else {
+					$('#main-time-mins').text(minCounter);
+				}				
+			startCountDown();		
 		} else {
-			$('#main-time-mins').text(minCounter);
+			secCounter--;
+			$('#main-time-sec').text(secCounter);		
+			startCountDown();
 		}
-
-		$('#main-time-sec').text(secCounter);
-		startCountDown();		
-	} else {
-		secCounter--;
-		$('#main-time-sec').text(secCounter);		
-		startCountDown();
 	}
-
-
-
-
+	alreadyCounting = true;
 });
 
 //Stop
 $('#stop').on('click', () => {
 	stopCountDown();
 	resetTracker = true;
+	alreadyCounting = false;
 });
 
 //Reset
 $('#reset').on('click', () => {
 	stopCountDown();
 	resetTracker = false;
+	alreadyCounting = false;
 	$('#timer-label').text('Session');
 	$('#main-time-mins').text('00');
 	$('#main-time-sec').text('00');

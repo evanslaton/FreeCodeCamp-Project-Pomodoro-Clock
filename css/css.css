@@ -1,4 +1,3 @@
-/*red #753940*/
 html {
 	height: 100%;
 }
@@ -27,19 +26,24 @@ h1 {
 	margin-top: 30px;
 }
 
-p {
-	margin: 0;
-}
-
-.red {
-	color: #753940;
-}
-
 div.columns {
 	width: 50%;
 	height: 100px;
 	float: left;
 	margin-top: 120px;
+}
+
+p {
+	margin: 0;
+}
+
+.time {
+	font-family: Inconsolata, monospace;
+	font-size: 72px;
+}
+
+.red {
+	color: #753940;
 }
 
 .timer-label {
@@ -52,22 +56,6 @@ div.columns {
 	text-transform: uppercase;
 }
 
-.countdown-buttons {
-	width: 100px;
-	padding: 8px 0;
-	text-align: center;
-}
-
-.main-time {
-	width: 80%;
-	margin: 0 auto;
-}
-
-.time {
-	font-family: Inconsolata, monospace;
-	font-size: 72px;
-}
-
 button {
 	background-color: #5DBF89;
 	color: #293852;
@@ -76,7 +64,22 @@ button {
 	margin: 0 10px;
 	font-size: 24px;
 	padding: 8px 25px;
+}
 
+.countdown-buttons {
+	width: 100px;
+	padding: 8px 0;
+	text-align: center;
+}
+
+.margin-top {
+	margin-top: 100px !important;
+}
+
+.set-timer-section {
+	position: relative;
+	max-width: 350px;
+	margin: 0 auto;
 }
 
 .inline-block {
@@ -89,15 +92,19 @@ button.inline-block {
 	text-align: center;
 }
 
-.set-timer-section {
-	position: relative;
-	max-width: 350px;
-	margin: 0 auto;
+.time-centerer {
+	width: 75px;
+	margin-left: 75px;
+	text-align: center;
 }
 
 p.set-timer {
 	font-size: 24px;
 	width: 100%;
+}
+
+.inline-block {
+	display: inline-block;
 }
 
 .absolute {
@@ -106,18 +113,8 @@ p.set-timer {
 	right: 0;
 }
 
-.margin-top {
-	margin-top: 100px !important;
-}
-
 .margin-top2 {
 	margin-top: 65px;
-}
-
-.time-centerer {
-	width: 75px;
-	margin-left: 75px;
-	text-align: center;
 }
 
 @media screen and (max-width: 740px) {
@@ -128,7 +125,7 @@ p.set-timer {
 	}
 
 	.margin-top {
-		margin-top: 125px !important;
+		margin-top: 145px !important;
 	}
 
 	.margin-top2 {
