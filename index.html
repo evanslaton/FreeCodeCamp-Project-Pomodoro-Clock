@@ -11,19 +11,19 @@
 	<div class="container">
 
 		<div class="columns">
-			<p class="time">00:<span class="red">00</span></p>
+			<p class="time"><span id="main-time-mins">00</span>:<span id="main-time-sec" class="red">00</span></p>
 			<p class="timer-label">Session</p>
 		
-			<button class="countdown-buttons">Start</button>
-			<button class="countdown-buttons">Stop</button>
-			<button class="countdown-buttons">Reset</button>		
+			<button id="start" class="countdown-buttons">Start</button>
+			<button id="stop" class="countdown-buttons">Stop</button>
+			<button id="reset" class="countdown-buttons">Reset</button>		
 		</div>
 
 		<div class="columns margin-top">
 			<div id="session" class="set-timer-section">
 				<div class="time-centerer">
 					<p class="set-timer">Session</p>
-					<p id="sessionTime" class="time inline-block">5</p>
+					<p id="sessionTime" class="time inline-block">25</p>
 				</div>
 				<div class="absolute">
 					<button class="inline-block add-time">+</button>
@@ -34,7 +34,7 @@
 			<div id="break" class="set-timer-section margin-top2">
 				<div class="time-centerer">
 					<p class="set-timer">Break</p>
-					<p id="breakTime" class="time inline-block">25</p>
+					<p id="breakTime" class="time inline-block">5</p>
 				</div>
 				<div class="absolute">
 					<button class="inline-block add-time">+</button>
