@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var sessionTime = 25;
 	var breakTime = 5;
+	var time;
 	var minCounter;
 	var secCounter;
 	var resetTracker = false;
@@ -9,7 +10,7 @@ $(document).ready(function() {
 	var startCountDown = () => {
 		oneSecondInterval = setInterval(function() {
 			countDown();
-		}, 1000);
+		}, 300);
 	};
 
 	var stopCountDown = () => {
@@ -21,9 +22,7 @@ $(document).ready(function() {
     		minCounter--
     		$('#main-time-mins').text(minCounter);
     	}
-        
-        secCounter--;
-        
+        secCounter--;      
         if (secCounter < 10) {
         	$('#main-time-sec').text('0' + secCounter);        	
         } else {
@@ -36,10 +35,44 @@ $(document).ready(function() {
 
         if (minCounter === 0 && secCounter === 60) {
         	stopCountDown();
+
+        	if ($('#timer-label').text() === 'Session') {
+        		startBreakTimer();        		
+        	} else {
+				startSessionTimer();
+        	}
         }
 	}
 
+	var startSessionTimer = () => {
+		$('#timer-label').text('Session');	
+		secCounter = 60;
+		minCounter = sessionTime;
 
+		if (sessionTime < 10) {
+			$('#main-time-mins').text('0' + sessionTime);
+		} else {
+			$('#main-time-mins').text(minCounter);
+		}
+		$('#main-time-sec').text('00');
+		startCountDown();
+	};
+
+	var startBreakTimer = () => {
+		$('#timer-label').text('Break');
+		secCounter = 60;
+		minCounter = breakTime;		
+
+		if (secCounter === 60) {
+			if (breakTime < 10) {
+				$('#main-time-mins').text('0' + breakTime);				
+			} else {
+				$('#main-time-mins').text(breakTime);
+			}
+			$('#main-time-sec').text('00');
+		} 
+		startCountDown();
+	};
 
 $('#start').on('click', () => {
 	if (!resetTracker) {
@@ -51,6 +84,7 @@ $('#start').on('click', () => {
 		} else {
 			$('#main-time-mins').text(minCounter);
 		}
+
 		$('#main-time-sec').text(secCounter);
 		startCountDown();		
 	} else {
@@ -58,6 +92,10 @@ $('#start').on('click', () => {
 		$('#main-time-sec').text(secCounter);		
 		startCountDown();
 	}
+
+
+
+
 });
 
 //Stop
@@ -70,26 +108,41 @@ $('#stop').on('click', () => {
 $('#reset').on('click', () => {
 	stopCountDown();
 	resetTracker = false;
+	$('#timer-label').text('Session');
+	$('#main-time-mins').text('00');
+	$('#main-time-sec').text('00');
 });
 
 //Adds time to session/break counters
 $('.add-time').on('click', function() {
-	sessionTime = parseInt($(this).parent().parent().find($('.time')).text());
-	sessionTime++;
-	if (sessionTime > 99) {
-		sessionTime = 1;
+	time = parseInt($(this).parent().parent().find($('.time')).text());
+	time++;
+	if (time > 99) {
+		time = 1;
 	}
-	$(this).parent().parent().find($('.time')).text(sessionTime);
+	$(this).parent().parent().find($('.time')).text(time);
+
+	if ($(this).parent().parent().find($('.set-timer')).text() === 'Session') {
+		sessionTime = time;
+	} else {
+		breakTime = time;
+	}
 });
 
-//Subtractss time to session/break counters
+//Subtracts time to session/break counters
 $('.subtract-time').on('click', function() {
-	sessionTime = parseInt($(this).parent().parent().find($('.time')).text());
-	sessionTime--;
-	if (sessionTime < 1) {
-		sessionTime = 99;
+	time = parseInt($(this).parent().parent().find($('.time')).text());
+	time--;
+	if (time < 1) {
+		time = 99;
 	}
-	$(this).parent().parent().find($('.time')).text(sessionTime);
+	$(this).parent().parent().find($('.time')).text(time);
+
+	if ($(this).parent().parent().find($('.set-timer')).text() === 'Session') {
+		sessionTime = time;
+	} else {
+	breakTime = time;
+	}
 });
 
 
