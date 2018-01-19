@@ -3,13 +3,11 @@ html {
 }
 
 body {
-	padding: 0;
 	margin: 0;
 	text-align: center;
 	background-color: #293852;
 	color: #59A2EE;
 	height: 100%;
-	overflow: hidden;
 	font-family: 'Fjalla One', sans-serif;
 	position: relative;
 }
@@ -84,6 +82,7 @@ button {
 
 .margin-top {
 	margin-top: 100px !important;
+  padding-bottom: 50px;
 }
 
 .set-timer-section {
@@ -127,7 +126,7 @@ p.set-timer {
 	margin-top: 65px;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 753px) {
 	div.columns {
 		float: none;
 		width: 100%;
@@ -135,7 +134,7 @@ p.set-timer {
 	}
 
 	.margin-top {
-		margin-top: 50px !important;
+		margin-top: 20px !important;
 	}
 
 	.margin-top2 {
@@ -200,5 +199,12 @@ p.set-timer {
 	.absolute {
 		position: relative;
 		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 333px) {
+	.signature {
+		position: absolute;
+		top: 9px;
 	}
 }
