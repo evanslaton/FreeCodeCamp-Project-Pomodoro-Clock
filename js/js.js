@@ -153,7 +153,7 @@ $('.subtract-time').on('click', function() {
 	if ($(this).parent().parent().find($('.set-timer')).text() === 'Session') {
 		sessionTime = time;
 	} else {
-	breakTime = time;
+		breakTime = time;
 	}
 });
 
