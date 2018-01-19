@@ -11,6 +11,7 @@ body {
 	height: 100%;
 	overflow: hidden;
 	font-family: 'Fjalla One', sans-serif;
+	position: relative;
 }
 
 .container {
@@ -22,13 +23,22 @@ h1 {
 	background-color: #5DBF89;
 	color: #293852;
 	text-transform: uppercase;
-	padding: 25px 0;
+	padding: 25px 0 45px;
 	margin-top: 30px;
+}
+
+.signature {
+	clear: both;
+	padding-top: 100px;
+	color: #293852;
+	position: absolute;
+	top: -30px;
+	left: 0;
+	right: 0;
 }
 
 div.columns {
 	width: 50%;
-	height: 100px;
 	float: left;
 	margin-top: 120px;
 }
@@ -125,7 +135,7 @@ p.set-timer {
 	}
 
 	.margin-top {
-		margin-top: 145px !important;
+		margin-top: 50px !important;
 	}
 
 	.margin-top2 {
@@ -156,10 +166,6 @@ p.set-timer {
 		font-size: 24px;
 		padding: 8px 0;
 		text-align: center;
-	}
-
-	.margin-top {
-		margin-top: 250px !important;
 	}
 
 	.absolute {
